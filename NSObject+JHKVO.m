@@ -216,4 +216,18 @@ static Class kvo_class(id self, SEL _cmd)
     return NO;
 }
 
+- (void)JH_removeObserver:(NSObject *)observer forKey:(NSString *)key
+{
+    NSMutableArray* observers = objc_getAssociatedObject(self, (__bridge const void *)(kJHKVOAssociatedObservers));
+    
+    JHObservationInfo *infoToRemove;
+    for (JHObservationInfo* info in observers) {
+        if (info.observer == observer && [info.key isEqual:key]) {
+            infoToRemove = info;
+            break;
+        }
+    }
+    
+    [observers removeObject:infoToRemove];
+}
 @end

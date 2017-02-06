@@ -9,5 +9,7 @@
 #import "MineModel.h"
 
 @implementation MineModel
-
+-(void)doSomethingMethod:(NSString *)aaaa{
+    NSLog(@"%@",aaaa);
+}
 @end
