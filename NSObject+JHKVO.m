@@ -27,6 +27,8 @@ NSString *const kJHKVOAssociatedObservers = @"JHKVOAssociatedObservers";
         _observer = observer;
         _key = key;
         _block = block;
+        NSLog(@"JHObservationInfo :  %@: %@", NSStringFromSelector(_cmd), self);
+
     }
     return self;
 }

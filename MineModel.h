@@ -13,4 +13,6 @@
 @property(nonatomic,strong)NSString *phone;
 @property(nonatomic,strong)NSString *text;
 -(void)doSomethingMethod:(NSString*)aaaa;
+-(NSString*)myMessage1;
+-(NSString*)myMessage2;
 @end
