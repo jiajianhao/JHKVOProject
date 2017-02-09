@@ -11,9 +11,11 @@
 #import "NSObject+JHKVO.h"
 #import <objc/runtime.h>
 #import<objc/message.h>
+#import "AssociatedViewController.h"
 @interface ViewController ()
 @property (nonatomic, weak) IBOutlet UITextField *textfield;
 @property (nonatomic, weak) IBOutlet UIButton *button;
+
 
 @property (nonatomic, strong) MineModel *mModel;
 
@@ -56,6 +58,13 @@
 //    self.mModel.text = msgs[index];
     self.mModel.name=msgs[index];
 
+}
+- (IBAction)Nestpage:(id)sender
+{
+    AssociatedViewController *aView =[[AssociatedViewController alloc]init];
+    [self.navigationController pushViewController:aView animated:YES];
+    
+    
 }
 -(void)test :(NSString *)str1  :(NSString*)str2{
     NSLog(@"class ===>%@",[MineModel class]);

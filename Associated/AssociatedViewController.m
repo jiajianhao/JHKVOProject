@@ -17,10 +17,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+   
+    [self testTypeOf];
     
     
-    
-    
+}
+-(void)testTypeOf{
+    NSString *str;
+    __strong typeof(str) a = @"2";
+    BOOL isClass = [a isKindOfClass:[NSString class]];
+    if (isClass == YES) {
+        NSLog(@"yes");
+    }
 }
 
 - (void)didReceiveMemoryWarning {
