@@ -20,6 +20,7 @@
 		845426551E4C3BF6000F481D /* UIViewController+EventGather.m in Sources */ = {isa = PBXBuildFile; fileRef = 845426501E4C3BF6000F481D /* UIViewController+EventGather.m */; };
 		845426561E4C3BF6000F481D /* MineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 845426531E4C3BF6000F481D /* MineModel.m */; };
 		845426591E4C3C7D000F481D /* MineModel+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 845426581E4C3C7D000F481D /* MineModel+Event.m */; };
+		845426661E501201000F481D /* NSObject+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 845426651E501201000F481D /* NSObject+Event.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,9 @@
 		845426531E4C3BF6000F481D /* MineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineModel.m; sourceTree = "<group>"; };
 		845426571E4C3C7D000F481D /* MineModel+Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MineModel+Event.h"; sourceTree = "<group>"; };
 		845426581E4C3C7D000F481D /* MineModel+Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MineModel+Event.m"; sourceTree = "<group>"; };
+		845426641E501201000F481D /* NSObject+Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Event.h"; sourceTree = "<group>"; };
+		845426651E501201000F481D /* NSObject+Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Event.m"; sourceTree = "<group>"; };
+		845426671E50165F000F481D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 				844DDF321E4814A000D6528D /* Assets.xcassets */,
 				844DDF341E4814A000D6528D /* LaunchScreen.storyboard */,
 				844DDF371E4814A000D6528D /* Info.plist */,
+				845426671E50165F000F481D /* PrefixHeader.pch */,
 				844DDF261E4814A000D6528D /* Supporting Files */,
 			);
 			path = JHKVOProject;
@@ -151,6 +156,8 @@
 				845426501E4C3BF6000F481D /* UIViewController+EventGather.m */,
 				845426571E4C3C7D000F481D /* MineModel+Event.h */,
 				845426581E4C3C7D000F481D /* MineModel+Event.m */,
+				845426641E501201000F481D /* NSObject+Event.h */,
+				845426651E501201000F481D /* NSObject+Event.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -273,6 +280,7 @@
 				844DDF2E1E4814A000D6528D /* ViewController.m in Sources */,
 				845426561E4C3BF6000F481D /* MineModel.m in Sources */,
 				845426591E4C3C7D000F481D /* MineModel+Event.m in Sources */,
+				845426661E501201000F481D /* NSObject+Event.m in Sources */,
 				8454264A1E4B17A6000F481D /* AssociatedViewController.m in Sources */,
 				845426541E4C3BF6000F481D /* NSObject+JHKVO.m in Sources */,
 				844DDF2B1E4814A000D6528D /* AppDelegate.m in Sources */,
@@ -413,6 +421,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QDC3KV7D2U;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/JHKVOProject/PrefixHeader.pch";
 				INFOPLIST_FILE = JHKVOProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -430,6 +440,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QDC3KV7D2U;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/JHKVOProject/PrefixHeader.pch";
 				INFOPLIST_FILE = JHKVOProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (

@@ -7,7 +7,7 @@
 //
 
 #import "MineModel.h"
-#define Mine_message @"he is a pirate"
+//#define Mine_message @"he is a pirate"
 @implementation MineModel
 -(void)doSomethingMethod:(NSString *)aaaa{
     NSLog(@"%@",aaaa);

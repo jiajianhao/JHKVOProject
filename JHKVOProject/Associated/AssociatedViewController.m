@@ -5,9 +5,9 @@
 //  Created by admin on 2017/2/8.
 //  Copyright © 2017年 admin. All rights reserved.
 //
+//根据http://ios.jobbole.com/84919/写的
 
 #import "AssociatedViewController.h"
-#import <objc/runtime.h>
 #import "MineModel.h"
 @interface AssociatedViewController ()
 
@@ -22,9 +22,12 @@
     //    [self testTypeOf];
     [self mineClassMethodChange];
     [self mineInstanceMethodChange];
+    [self mineSetProperty];
 
     
 }
+
+#pragma mark 类方法交换
 -(void)mineClassMethodChange{
     //类方法
     Method m1 = class_getClassMethod([MineModel class], @selector(myLowerCaseMessage));
@@ -35,17 +38,50 @@
       [MineModel myLowerCaseMessage];
       [MineModel myUpperCaseMessage];
  }
+#pragma mark 实例方法交换
 -(void)mineInstanceMethodChange{
     MineModel *model1 =[[MineModel alloc]init];
-    
-    Method m1 = class_getInstanceMethod([model1 class], @selector(readText1));
+     Method m1 = class_getInstanceMethod([model1 class], @selector(readText1));
     Method m2 = class_getInstanceMethod([model1 class], @selector(readText2));
     // 开始交换方法实现
     method_exchangeImplementations(m1, m2);
     // 交换后，先打印学习，再打印跑！
     [model1 readText1];
     [model1 readText2];
+   
+
 }
+#pragma mark 分类中设置属性
+-(void)mineSetProperty{
+    MineModel *model1 =[[MineModel alloc]init];
+    model1.jh_RootPage=@"RootViewController";
+    model1.jh_PreviousPage=@"RootViewController_1";
+    NSLog(@"%@",model1.jh_RootPage);
+    NSLog(@"%@",model1.jh_PreviousPage);
+    
+}
+
+
+#pragma mark 读取object所有属性
+-(void)readObjectPerporties{
+    unsigned int outCount = 0;
+    Ivar *ivars = class_copyIvarList([MineModel class], &outCount);
+    
+    // 遍历所有成员变量
+    for (int i = 0; i < outCount; i++) {
+        // 取出i位置对应的成员变量
+        Ivar ivar = ivars[i];
+        const char *name = ivar_getName(ivar);
+        const char *type = ivar_getTypeEncoding(ivar);
+        NSLog(@"成员变量名：%s 成员变量类型：%s",name,type);
+    }
+    // 注意释放内存！
+    free(ivars);
+}
+
+
+
+#pragma mark typeof
 -(void)testTypeOf{
     NSString *str;
     __strong typeof(str) a = @"2";
@@ -54,6 +90,17 @@
         NSLog(@"yes");
     }
 }
+////////////////////////////////
+
+
+////////////////////////////////
+
+
+
+////////////////////////////////
+
+
+////////////////////////////////
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

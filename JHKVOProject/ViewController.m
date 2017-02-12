@@ -8,9 +8,6 @@
 
 #import "ViewController.h"
 #import "MineModel.h"
-#import "NSObject+JHKVO.h"
-#import <objc/runtime.h>
-#import<objc/message.h>
 #import "AssociatedViewController.h"
 @interface ViewController ()
 @property (nonatomic, weak) IBOutlet UITextField *textfield;

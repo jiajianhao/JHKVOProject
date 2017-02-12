@@ -9,5 +9,7 @@
 #import "MineModel.h"
 
 @interface MineModel (Event)
+@property (nonatomic,strong)NSString *jh_RootPage;
+@property (nonatomic,strong)NSString *jh_PreviousPage;
 
 @end
