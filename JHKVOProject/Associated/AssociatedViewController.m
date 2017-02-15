@@ -11,6 +11,7 @@
 #import "MineModel.h"
 #import <objc/NSObjCRuntime.h>
 #import <Foundation/NSObjCRuntime.h>
+#import "CalculatorManager.h"
 typedef NS_ENUM(NSInteger, Test1) {
     
     //以下是枚举成员
@@ -43,12 +44,17 @@ typedef NS_ENUM(NSInteger, Test1) {
     NSLog(@"%ld %ld %ld %ld",(long)TestA,(long)TestB,(long)TestC,(long)TestD);
     
    
-    [self getBlock:^(NSDictionary*json){
-        NSLog(@"%@",json);
-    }andPostData:@"https://api.douban.com/v2/book/1220560"];
+//    [self getBlock:^(NSDictionary*json){
+//        NSLog(@"%@",json);
+//    }andPostData:@"https://api.douban.com/v2/book/1220560"];
     
+    CalculatorManager *manager = [[CalculatorManager alloc] init];
+    manager.add(1);
+    NSLog(@"%d", manager.result);
+    manager.add(1).add(2).add(3).add(4);
+    NSLog(@"%d", manager.result);
     
-    
+   
 }
 
 #pragma mark 类方法交换
@@ -84,7 +90,6 @@ typedef NS_ENUM(NSInteger, Test1) {
     NSLog(@"%@",model1.jh_name);
     
 }
-
 
 #pragma mark 读取object所有属性
 -(void)readObjectPerporties{
@@ -164,6 +169,7 @@ typedef NS_ENUM(NSInteger, Test1) {
 
 
 ////////////////////////////////
+
 
 
 ////////////////////////////////
