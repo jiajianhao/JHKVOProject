@@ -23,6 +23,7 @@
 		845426661E501201000F481D /* NSObject+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 845426651E501201000F481D /* NSObject+Event.m */; };
 		845426741E546B52000F481D /* JHKVOProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 845426731E546B52000F481D /* JHKVOProjectUITests.m */; };
 		8454267D1E548015000F481D /* CalculatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454267C1E548015000F481D /* CalculatorManager.m */; };
+		845426801E54820C000F481D /* MyStringManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454267F1E54820C000F481D /* MyStringManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		845426751E546B52000F481D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8454267B1E548015000F481D /* CalculatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorManager.h; sourceTree = "<group>"; };
 		8454267C1E548015000F481D /* CalculatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorManager.m; sourceTree = "<group>"; };
+		8454267E1E54820C000F481D /* MyStringManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStringManager.h; sourceTree = "<group>"; };
+		8454267F1E54820C000F481D /* MyStringManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStringManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,8 @@
 				845426531E4C3BF6000F481D /* MineModel.m */,
 				8454267B1E548015000F481D /* CalculatorManager.h */,
 				8454267C1E548015000F481D /* CalculatorManager.m */,
+				8454267E1E54820C000F481D /* MyStringManager.h */,
+				8454267F1E54820C000F481D /* MyStringManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				845426551E4C3BF6000F481D /* UIViewController+EventGather.m in Sources */,
+				845426801E54820C000F481D /* MyStringManager.m in Sources */,
 				844DDF2E1E4814A000D6528D /* ViewController.m in Sources */,
 				845426561E4C3BF6000F481D /* MineModel.m in Sources */,
 				8454267D1E548015000F481D /* CalculatorManager.m in Sources */,

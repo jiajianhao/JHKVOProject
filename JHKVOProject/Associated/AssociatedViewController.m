@@ -12,6 +12,7 @@
 #import <objc/NSObjCRuntime.h>
 #import <Foundation/NSObjCRuntime.h>
 #import "CalculatorManager.h"
+#import "MyStringManager.h"
 typedef NS_ENUM(NSInteger, Test1) {
     
     //以下是枚举成员
@@ -55,6 +56,11 @@ typedef NS_ENUM(NSInteger, Test1) {
     NSLog(@"%d", manager.result);
     
    
+    MyStringManager *manager1 = [[MyStringManager alloc] init];
+    manager1.doadd(@"111").doadd(@"aaaa");
+    NSLog(@"%@", manager1.myString);
+
+    
 }
 
 #pragma mark 类方法交换
