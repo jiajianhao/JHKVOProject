@@ -9,6 +9,22 @@
 
 #import "AssociatedViewController.h"
 #import "MineModel.h"
+#import <objc/NSObjCRuntime.h>
+#import <Foundation/NSObjCRuntime.h>
+typedef NS_ENUM(NSInteger, Test1) {
+    
+    //以下是枚举成员
+    
+    TestA = 0,
+    
+    TestB = 1,
+    
+    TestC = 2,
+    
+    TestD = 3
+    
+};
+
 @interface AssociatedViewController ()
 
 @end
@@ -23,7 +39,15 @@
     [self mineClassMethodChange];
     [self mineInstanceMethodChange];
     [self mineSetProperty];
-
+    [self readObjectPerporties];
+    NSLog(@"%ld %ld %ld %ld",(long)TestA,(long)TestB,(long)TestC,(long)TestD);
+    
+   
+    [self getBlock:^(NSDictionary*json){
+        NSLog(@"%@",json);
+    }andPostData:@"https://api.douban.com/v2/book/1220560"];
+    
+    
     
 }
 
@@ -54,10 +78,10 @@
 #pragma mark 分类中设置属性
 -(void)mineSetProperty{
     MineModel *model1 =[[MineModel alloc]init];
-    model1.jh_RootPage=@"RootViewController";
-    model1.jh_PreviousPage=@"RootViewController_1";
-    NSLog(@"%@",model1.jh_RootPage);
-    NSLog(@"%@",model1.jh_PreviousPage);
+    model1.jh_name=@"jiajianhao";
+    model1.jh_name=@"jiahao";
+    NSLog(@"%@",model1.jh_name);
+    NSLog(@"%@",model1.jh_name);
     
 }
 
@@ -81,6 +105,8 @@
 
 
 
+
+
 #pragma mark typeof
 -(void)testTypeOf{
     NSString *str;
@@ -92,9 +118,49 @@
 }
 ////////////////////////////////
 
+-(void)readMyBook{
+    NSURL *url = [NSURL URLWithString:@"https://api.douban.com/v2/book/1220559"];
 
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * data,NSURLResponse *reponse,NSError *error){
+        NSError *jhError;
+        //          NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        //        NSLog(@"string:%@",string);
+        NSDictionary* result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jhError];
+        NSLog(@"result:%@",result);
+        
+        NSLog(@"error:%@",error);
+        
+        NSLog(@"jhError:%@",jhError);
+        
+        
+    }];
+    [task resume];
+}
 ////////////////////////////////
 
+- (void)getBlock:(void (^)(NSDictionary* json))susscess andPostData:(NSString*)data{
+    NSURL *url = [NSURL URLWithString:data];
+//    NSURL *url = [NSURL URLWithString:@"https://api.douban.com/v2/book/1220560"];
+
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:2.0];
+    
+    NSURLSessionDataTask *task =[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
+        NSError *error1;
+        NSDictionary *dic =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error1];
+        NSLog(@"%@",dic);
+        
+        susscess(dic);
+        
+//        return dic;
+    }];
+    
+    [task resume];
+    
+}
 
 
 ////////////////////////////////

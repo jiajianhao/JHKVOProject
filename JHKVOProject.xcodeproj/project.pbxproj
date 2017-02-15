@@ -21,10 +21,18 @@
 		845426561E4C3BF6000F481D /* MineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 845426531E4C3BF6000F481D /* MineModel.m */; };
 		845426591E4C3C7D000F481D /* MineModel+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 845426581E4C3C7D000F481D /* MineModel+Event.m */; };
 		845426661E501201000F481D /* NSObject+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 845426651E501201000F481D /* NSObject+Event.m */; };
+		845426741E546B52000F481D /* JHKVOProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 845426731E546B52000F481D /* JHKVOProjectUITests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		844DDF3D1E4814A000D6528D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 844DDF1B1E4814A000D6528D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 844DDF221E4814A000D6528D;
+			remoteInfo = JHKVOProject;
+		};
+		845426761E546B52000F481D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 844DDF1B1E4814A000D6528D /* Project object */;
 			proxyType = 1;
@@ -61,6 +69,9 @@
 		845426641E501201000F481D /* NSObject+Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Event.h"; sourceTree = "<group>"; };
 		845426651E501201000F481D /* NSObject+Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Event.m"; sourceTree = "<group>"; };
 		845426671E50165F000F481D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		845426711E546B52000F481D /* JHKVOProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JHKVOProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		845426731E546B52000F481D /* JHKVOProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHKVOProjectUITests.m; sourceTree = "<group>"; };
+		845426751E546B52000F481D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +89,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8454266E1E546B52000F481D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -86,6 +104,7 @@
 			children = (
 				844DDF251E4814A000D6528D /* JHKVOProject */,
 				844DDF3F1E4814A000D6528D /* JHKVOProjectTests */,
+				845426721E546B52000F481D /* JHKVOProjectUITests */,
 				844DDF241E4814A000D6528D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,6 +114,7 @@
 			children = (
 				844DDF231E4814A000D6528D /* JHKVOProject.app */,
 				844DDF3C1E4814A000D6528D /* JHKVOProjectTests.xctest */,
+				845426711E546B52000F481D /* JHKVOProjectUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,6 +191,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		845426721E546B52000F481D /* JHKVOProjectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				845426731E546B52000F481D /* JHKVOProjectUITests.m */,
+				845426751E546B52000F481D /* Info.plist */,
+			);
+			path = JHKVOProjectUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -209,6 +238,24 @@
 			productReference = 844DDF3C1E4814A000D6528D /* JHKVOProjectTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		845426701E546B52000F481D /* JHKVOProjectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8454267A1E546B52000F481D /* Build configuration list for PBXNativeTarget "JHKVOProjectUITests" */;
+			buildPhases = (
+				8454266D1E546B52000F481D /* Sources */,
+				8454266E1E546B52000F481D /* Frameworks */,
+				8454266F1E546B52000F481D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				845426771E546B52000F481D /* PBXTargetDependency */,
+			);
+			name = JHKVOProjectUITests;
+			productName = JHKVOProjectUITests;
+			productReference = 845426711E546B52000F481D /* JHKVOProjectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -224,6 +271,12 @@
 						ProvisioningStyle = Automatic;
 					};
 					844DDF3B1E4814A000D6528D = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = QDC3KV7D2U;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 844DDF221E4814A000D6528D;
+					};
+					845426701E546B52000F481D = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = QDC3KV7D2U;
 						ProvisioningStyle = Automatic;
@@ -246,6 +299,7 @@
 			targets = (
 				844DDF221E4814A000D6528D /* JHKVOProject */,
 				844DDF3B1E4814A000D6528D /* JHKVOProjectTests */,
+				845426701E546B52000F481D /* JHKVOProjectUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -263,6 +317,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		844DDF3A1E4814A000D6528D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8454266F1E546B52000F481D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -296,6 +357,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8454266D1E546B52000F481D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				845426741E546B52000F481D /* JHKVOProjectUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -303,6 +372,11 @@
 			isa = PBXTargetDependency;
 			target = 844DDF221E4814A000D6528D /* JHKVOProject */;
 			targetProxy = 844DDF3D1E4814A000D6528D /* PBXContainerItemProxy */;
+		};
+		845426771E546B52000F481D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 844DDF221E4814A000D6528D /* JHKVOProject */;
+			targetProxy = 845426761E546B52000F481D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -480,6 +554,30 @@
 			};
 			name = Release;
 		};
+		845426781E546B52000F481D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = QDC3KV7D2U;
+				INFOPLIST_FILE = JHKVOProjectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.antrice.JHKVOProjectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = JHKVOProject;
+			};
+			name = Debug;
+		};
+		845426791E546B52000F481D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = QDC3KV7D2U;
+				INFOPLIST_FILE = JHKVOProjectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.antrice.JHKVOProjectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = JHKVOProject;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -509,6 +607,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8454267A1E546B52000F481D /* Build configuration list for PBXNativeTarget "JHKVOProjectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				845426781E546B52000F481D /* Debug */,
+				845426791E546B52000F481D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,19 +9,6 @@
 #import "NSObject+Event.h"
 #import <objc/runtime.h>
 @implementation NSObject (Event)
-+(void)load{
-    Method m1 = class_getClassMethod([self class], @selector(jh_name));
-    Method m2 = class_getClassMethod([self class], @selector(jh_name_alias));
-    method_exchangeImplementations(m1, m2);
-
-}
-+(NSString*)jh_name{
-    return @"jiajianhao";
-}
-+(NSString *)jh_name_alias{
-    return @"Hao Ge";
-}
-/////////////////////////////////
 char nameKey;
 
 - (void)setName:(NSString *)name {

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIViewController (EventGather)
-
+@property (nonatomic,strong)NSString *jh_RootPage;
+@property (nonatomic,strong)NSString *jh_PreviousPage;
 @end

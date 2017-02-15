@@ -10,8 +10,6 @@
 
 @interface NSObject (Event)
 @property(nonatomic,copy)NSString *name;
-+(NSString*)jh_name;
-+(NSString*)jh_name_alias;
 
 @property(nonatomic,copy)NSString *eventValue;
 

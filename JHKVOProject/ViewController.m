@@ -58,11 +58,16 @@
 }
 - (IBAction)Nestpage:(id)sender
 {
+    [[self class] cancelPreviousPerformRequestsWithTarget:self selector:@selector(gotoNextPage) object:sender];
+    [self performSelector:@selector(gotoNextPage) withObject:sender afterDelay:0.2f];
+}
+-(void)gotoNextPage{
     AssociatedViewController *aView =[[AssociatedViewController alloc]init];
     [self.navigationController pushViewController:aView animated:YES];
     
-    
+
 }
+
 -(void)test :(NSString *)str1  :(NSString*)str2{
     NSLog(@"class ===>%@",[MineModel class]);
     Class myClazz = NSClassFromString(@"MineModel");
@@ -70,14 +75,17 @@
     NSLog(@"%@%@", str1,str2);
     
 }
+#pragma clang diagnostic push
+ #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 -(void)myJudge{
     
     SEL sel = NSSelectorFromString(@"doSomethingMethod:");//注意这个冒号,说明方法带有参数
     
     if([self.mModel respondsToSelector:sel]) {
-        [self.mModel performSelector:sel withObject:@"12345678"]; //注意如果有两个参数,使用两个withObject:参数;
+          [self.mModel performSelector:sel withObject:@"12345678"]; //注意如果有两个参数,使用两个withObject:参数;
     }
 }
+
 
 
 -(void)myMethodSwizzling{
@@ -91,7 +99,13 @@
     return @"he is a pirate \n myMessage1";
 }
 -(NSString*)myMessage2{
+    
     return [@"he is a pirate \n myMessage2" uppercaseString];
+}
+
+- (int)getNum {
+    
+    return 100;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
