@@ -11,8 +11,7 @@
 #import "MineModel.h"
 #import <objc/NSObjCRuntime.h>
 #import <Foundation/NSObjCRuntime.h>
-#import "CalculatorManager.h"
-#import "MyStringManager.h"
+
 typedef NS_ENUM(NSInteger, Test1) {
     
     //以下是枚举成员
@@ -45,21 +44,7 @@ typedef NS_ENUM(NSInteger, Test1) {
     NSLog(@"%ld %ld %ld %ld",(long)TestA,(long)TestB,(long)TestC,(long)TestD);
     
    
-//    [self getBlock:^(NSDictionary*json){
-//        NSLog(@"%@",json);
-//    }andPostData:@"https://api.douban.com/v2/book/1220560"];
     
-    CalculatorManager *manager = [[CalculatorManager alloc] init];
-    manager.add(1);
-    NSLog(@"%d", manager.result);
-    manager.add(1).add(2).add(3).add(4);
-    NSLog(@"%d", manager.result);
-    
-   
-    MyStringManager *manager1 = [[MyStringManager alloc] init];
-    manager1.doadd(@"111").doadd(@"aaaa");
-    NSLog(@"%@", manager1.myString);
-
     
 }
 
@@ -129,49 +114,6 @@ typedef NS_ENUM(NSInteger, Test1) {
 }
 ////////////////////////////////
 
--(void)readMyBook{
-    NSURL *url = [NSURL URLWithString:@"https://api.douban.com/v2/book/1220559"];
-
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * data,NSURLResponse *reponse,NSError *error){
-        NSError *jhError;
-        //          NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        //        NSLog(@"string:%@",string);
-        NSDictionary* result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jhError];
-        NSLog(@"result:%@",result);
-        
-        NSLog(@"error:%@",error);
-        
-        NSLog(@"jhError:%@",jhError);
-        
-        
-    }];
-    [task resume];
-}
-////////////////////////////////
-
-- (void)getBlock:(void (^)(NSDictionary* json))susscess andPostData:(NSString*)data{
-    NSURL *url = [NSURL URLWithString:data];
-//    NSURL *url = [NSURL URLWithString:@"https://api.douban.com/v2/book/1220560"];
-
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:2.0];
-    
-    NSURLSessionDataTask *task =[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
-        NSError *error1;
-        NSDictionary *dic =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error1];
-        NSLog(@"%@",dic);
-        
-        susscess(dic);
-        
-//        return dic;
-    }];
-    
-    [task resume];
-    
-}
 
 
 ////////////////////////////////
